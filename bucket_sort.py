@@ -1,7 +1,7 @@
 from random import randint
 
 
-def per_bucket(list_to_be_sorted, unit_index):
+def per_bucket(list_to_be_sorted, unit_index) -> list:
     # Setting up buckets and a list for containing the numbers smaller then the length of unit_index.
     list_smaller_numbers = []
     length_number = -unit_index
@@ -31,7 +31,7 @@ def per_bucket(list_to_be_sorted, unit_index):
     return list_to_be_sorted
 
 
-def bucket_sort(list_to_be_sorted):
+def bucket_sort(list_to_be_sorted) -> list:
     # Separate the list in positive and negative numbers. The negatives are put in positive to calculate with them
     # easily.
     negative_list, positive_list = [], []
@@ -40,7 +40,6 @@ def bucket_sort(list_to_be_sorted):
             positive_list.append(number)
         else:
             negative_list.append(number*-1)
-
 
     # Bucketsort for positive numbers. Checks the biggest number in the list and then check the length of that number.
     # That number of times the per_bucketsort fuction has to be called.
